@@ -5,6 +5,14 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var content = {
+    title: 'Article One | Venkatesh Radhakrishnan',
+    heading: 'Article One',
+    date: 'Oct 5 2016',
+    content: '<P>THIS IS MY FIRST ARTICLE | THIS IS MY FIRST ARTICLE | THIS IS MY FIRST ARTICLE</P><P>THIS IS MY FIRST ARTICLE | THIS IS MY FIRST ARTICLE</P><P>THIS IS MY FIRST ARTICLE</P>'
+};
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
