@@ -50,6 +50,15 @@ app.get('/counter', function (req, res) {
 });
 
 
+var names = [];
+app.get('/submit-name/:name', function (req, res) {
+  var name = req.params.name;
+  names.push(name);
+  //JSON JavaScript Object Notation
+  res.send(JSON.stringify(names));
+});
+
+
 app.get('/article-one', function (req, res) {
   res.send(createTemplate(articleOneObj));
 });
