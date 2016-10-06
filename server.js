@@ -58,6 +58,14 @@ app.get('/submit-name/:name', function (req, res) {
   res.send(JSON.stringify(names));
 });
 
+var names = [];
+app.get('/submit-name-new', function (req, res) {
+  var name = req.params.name;
+  names.push(name);
+  //JSON JavaScript Object Notation
+  res.send(JSON.stringify(names));
+});
+
 
 app.get('/article-one', function (req, res) {
   res.send(createTemplate(articleOneObj));
